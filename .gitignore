@@ -1,0 +1,5 @@
+/.idea/*
+.idea/
+/www/node_modules/*
+/truf/truffle.js
+/truf/build/
