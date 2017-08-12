@@ -9,6 +9,9 @@ https://etherscan.io/address/0xe6517b766e6ee07f91b517435ed855926bcb1aae#code
 
 https://etherscan.io/address/0xece701c76bd00d1c3f96410a0c69ea8dfcf5f34e#code
 
+Используется
+
+https://api.random.org/json-rpc/1/signing
 
 ```javascript
 
