@@ -1,11 +1,11 @@
-#Dice random with Oracle
+# Dice random with Oracle
 
 
-##iDice 1492 eth
+## iDice 1492 eth
 
 https://etherscan.io/address/0xe6517b766e6ee07f91b517435ed855926bcb1aae#code
 
-##Etheroll 2699 eth
+## Etheroll 2699 eth
 
 https://etherscan.io/address/0xece701c76bd00d1c3f96410a0c69ea8dfcf5f34e#code
 
@@ -71,7 +71,7 @@ https://api.random.org/json-rpc/1/signing
         
 ```
 
-##Dice 933 eth
+## Dice 933 eth
 
 https://etherscan.io/address/0x4e646a576917a6a47d5b0896c3e207693870869d#code
 

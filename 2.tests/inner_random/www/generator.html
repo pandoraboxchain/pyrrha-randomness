@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+		  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+			integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+			crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+			integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+			crossorigin="anonymous"></script>
+	<title>Inner Random Dapp Generator</title>
+</head>
+<body>
+
+<div class="row" style="padding-top: 120px">
+
+	<div class="col-md-8">
+
+		<div class="container" id="loading_boxes">
+			<div class="row">
+				<h1>Contracts are loading....</h1>
+			</div>
+		</div>
+
+		<div class="container" id="loaded_boxes" style="display: none;">
+
+			<div class="row">
+				<div class="col-md-6">
+					<h2>AutoGenerator</h2>
+				</div>
+				<div class="col-md-6">
+					<button class="btn btn-outline-success my-2 my-sm-0"
+							onClick="RandomPublic.save(); return false;">
+						Save in CSV *)
+					</button>
+				</div>
+			</div>
+
+
+			<div id="content_open" style="display: block">
+				<div class="row">
+					<div class="col-md-6">
+						<h2>Data List</h2>
+					</div>
+					<div class="col-md-6">
+						<h2>Total Gas Spent <span id="requests_gas"></span></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12" id="requests_pull">
+
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+	<div class="col-md-4" id="info_alerts">
+
+	</div>
+</div><hr>
+</div> <!-- /container -->
+
+
+<script src="./libs/web3.js"></script>
+<script src="./app/common.js"></script>
+<script src="./app/contract_public_generator.js"></script>
+<script src="./app/contract_customer.js"></script>
+<script src="./app/init_generator.js"></script>
+</body>
+</html>

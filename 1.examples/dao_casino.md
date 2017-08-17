@@ -1,12 +1,12 @@
-#DaoCasino
+# DaoCasino
 
 
 
-##Клиент подписывается на рендом, сервер отдает, контракт проверяет
+## Клиент подписывается на рендом, сервер отдает, контракт проверяет
 
 https://github.com/DaoCasino/DiceGame
 
-###Клиент
+### Клиент
 
 ```javascript
 function makeid() {
@@ -38,7 +38,7 @@ if (nonceTx != "") {
 }
 ```
 
-###Реализация конкретной подписки
+### Реализация конкретной подписки
 
 ```javascript
 key: "getFastRandom", value: function (seed, callback) {
@@ -63,7 +63,7 @@ key: "getFastRandom", value: function (seed, callback) {
 }
 ```
 
-##Серверное приложение
+## Серверное приложение
      
 https://github.com/DaoCasino/BankRollerApp
 
@@ -117,7 +117,7 @@ sendRandom2Server(game_code, address, seed){
 ```
 
 
-##Собственно в контракте подтверждается выигрыш
+## Собственно в контракте подтверждается выигрыш
 
 ```javascript
 	key: "sendSeed", value: function (address, seed, confirm) {

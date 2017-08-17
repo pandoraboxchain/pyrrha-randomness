@@ -1,8 +1,8 @@
-#Начальный контракт DaoCasino
+# Начальный контракт DaoCasino
 
 https://github.com/airalab/dao.casino/blob/master/contracts/Random.sol
 
-##Явное получение случайных чисел снаружи
+## Явное получение случайных чисел снаружи
 
 ```javascript
 /**
@@ -11,7 +11,7 @@ https://github.com/airalab/dao.casino/blob/master/contracts/Random.sol
 contract Random is Object, Recipient {
     struct Seed {
         bytes32 seed;
-        uint256 entropy;
+                uint256 entropy;
         uint256 blockNum;
     }
     

@@ -1,4 +1,4 @@
-#Randao
+# Randao
 
 https://github.com/randao/randao/blob/master/contracts/Randao.sol
 
@@ -35,7 +35,7 @@ function getRandom(uint256 _campaignID) noEther external returns (uint256) {
   }
 ```
   
-##Реализация
+## Реализация
 
 контракт
 

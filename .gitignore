@@ -1,5 +1,5 @@
 /.idea/*
 .idea/
-/www/node_modules/*
-/truf/truffle.js
-/truf/build/
+/2.tests/inner_random/www/node_modules/*
+/2.tests/inner_random/www/truf/truffle.js
+/2.tests/inner_random/www/truf/build/

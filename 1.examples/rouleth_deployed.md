@@ -1,8 +1,8 @@
-#Rouleth random wheel
+# Rouleth random wheel
 
 All listed contracts are deployed and contain real balances
 
-##Rouleth (5,163 ETH)
+## Rouleth (5,163 ETH)
 
 https://etherscan.io/address/0x18a672e11d637fffadccc99b152f4895da069601#code
 
@@ -35,7 +35,7 @@ checkBetResult(wheelResult, playerSpinned, blockHash, shaPlayer);
 
 
 
-##Rouleth (294 ETH)
+## Rouleth (294 ETH)
 
 https://etherscan.io/address/0x90fc38eb9592940e6d5bae221313d749ee26369b#code
 
@@ -63,6 +63,6 @@ function getRandomNumber(address player, uint256 playerblock) private returns(ui
     
 ```
 
-##Rouleth+Token (102 ETH)
+## Rouleth+Token (102 ETH)
 
 https://etherscan.io/address/0x91a57b2f6fa86b373bce5716eb26c81cbb004223
