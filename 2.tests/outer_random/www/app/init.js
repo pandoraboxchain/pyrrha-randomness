@@ -67,7 +67,9 @@ var ContractsInit = {
                             if (contract.address) {
                                 UiAlerts.addSuccess('deployed Provider0', contract.address);
                                 ContractsInit.deployedCount++;
-                                RandomProvider.setAdmin(adminAccount, 0);
+                                setTimeout(function() {
+                                    RandomProvider.setAdmin(adminAccount, 0);
+                                }, 1000);
                                 ContractsInit.finish();
                             }
                         }
@@ -85,7 +87,10 @@ var ContractsInit = {
                             if (contract.address) {
                                 UiAlerts.addSuccess('deployed Provider1', contract.address);
                                 ContractsInit.deployedCount++;
-                                RandomProvider.setAdmin(adminAccount, 1);
+                                setTimeout(function() {
+                                    RandomProvider.setAdmin(adminAccount, 1);
+                                }, 1000);
+
                                 ContractsInit.finish();
                             }
                         }

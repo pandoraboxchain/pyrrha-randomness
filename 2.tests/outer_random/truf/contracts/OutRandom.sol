@@ -62,12 +62,17 @@ contract OutRandom {
 		requests[index].seed = seed;
 	}
 
+
+	function getSeed(bytes32 salt, uint8 result) constant returns (bytes32 c) {
+		c = sha3(salt, result);
+	}
+
 	//someone updates real number from seed
-	function updateRequestResult(uint index, uint8 result) returns (bool) {
+	function updateRequestResult(uint index, bytes32 salt, uint8 result) returns (bool) {
 		if (requests[index].seed == 0x0) {
 			revert();
 		}
-		if (sha3(result, msg.sender) != requests[index].seed) {
+		if (sha3(salt, result) != requests[index].seed) {
 			revert();
 		}
 

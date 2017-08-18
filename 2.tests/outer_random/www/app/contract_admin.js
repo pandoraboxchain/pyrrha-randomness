@@ -31,7 +31,7 @@ var RandomAdmin  = {
                             } else {
                                 UiAlerts.addSuccess('updateRequestSeed', gas + ' tx:' + hash);
                                 RandomPublic.requestUpdate(request.index);
-                                RandomAdmin.updateSuggestIndex(adminAccount, request, suggest);
+                                RandomAdmin.updateSuggestIndex(address, request, suggest);
                             }
                         }
                     );
@@ -42,11 +42,17 @@ var RandomAdmin  = {
     updateSuggestIndex : function (address, request, suggest) {
         var contract = Contracts.provider[suggest.providerNum];
 
+        var admin =  contract.admin();
+        if (admin != address) {
+            UiAlerts.addError('updateSuggestIndex', 'send as admin of contract:' + admin);
+            return false;
+        }
         var params = {
             from: address
         };
         contract.updateSuggestIndex.estimateGas(
-            suggest.index, request.index,
+            suggest.index,
+            request.index,
             params,
             function (e, gas) {
                 if (e) {
@@ -56,14 +62,18 @@ var RandomAdmin  = {
                     params2.gas = gas;
                     Contracts.totalGasSpend += gas;
                     contract.updateSuggestIndex(
-                        suggest.index, request.index,
+                        suggest.index,
+                        request.index,
                         params2,
                         function (e, hash) {
                             if (e) {
                                 UiAlerts.addError('updateSuggestIndex' + suggest.providerNum, e.toString().substr(0, 100));
                             } else {
                                 UiAlerts.addSuccess('updateSuggestIndex' + suggest.providerNum, gas + ' tx:' + hash);
-                                RandomProvider.sendRequested(request, suggest);
+                                RandomPublic.suggestUpdate(suggest.providerNum, suggest.index);
+                                setTimeout(function() {
+                                    RandomProvider.sendRequested(request, suggest)
+                                }, 1000);
                             }
                         }
                     );

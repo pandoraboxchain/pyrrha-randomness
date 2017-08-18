@@ -29,19 +29,18 @@ var RandomPublic = {
         var contract = Contracts.provider[providerNum];
         var request = contract.getSuggest(index).toString().split(',');
         var seed = request[0];
-        var free = request[1];
+        var asked= request[1];
         var main_index = request[2];
 
-        var free_html = '';
-        console.log(contract.getSuggest(index).toString());
+        var asked_html = '';
 
-        if (free == 'true') {
-            free_html = 'waiting';
-            RandomPublic.suggestedSeeds.push({index : index, seed : seed, providerNum : providerNum});
+        if (asked == 'true') {
+            asked_html = '<span style="color:green">used</span>';
         } else {
-            free_html = '<span style="color:green">used</span>';
+            asked_html = 'waiting';
+            RandomPublic.suggestedSeeds.push({index: index, seed: seed, providerNum: providerNum});
         }
-        free_html += '=>' + main_index;
+        asked_html += '=>' + main_index;
 
         var real_html = '?';
         if (typeof(RandomProvider.sentNumbers[seed]) == 'undefined') {
@@ -57,7 +56,7 @@ var RandomPublic = {
             seed.substr(0, 10) + '...' +
             '</div>' +
             '<div class="col-md-2">' +
-            free_html +
+            asked_html +
             '</div>' +
             '<div class="col-md-2">' +
             real_html +

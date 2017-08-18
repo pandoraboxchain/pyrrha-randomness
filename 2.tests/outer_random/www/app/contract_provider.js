@@ -2,6 +2,8 @@
 var RandomProvider = {
     providerAccount : {},
     sentNumbers : {},
+    providerSalts : {},
+
     setAdmin : function (adminAddress, providerNum) {
         var address  = RandomProvider.providerAccount[providerNum];
         var contract = Contracts.provider[providerNum];
@@ -34,6 +36,9 @@ var RandomProvider = {
         );
     },
     placeSuggest : function (providerNum, update_pull) {
+        if (typeof(RandomProvider.providerSalts[providerNum]) == 'undefined') {
+            RandomProvider.providerSalts[providerNum] = 'a';
+        }
         var address  = RandomProvider.providerAccount[providerNum];
         var contract = Contracts.provider[providerNum];
         var params = {
@@ -45,7 +50,8 @@ var RandomProvider = {
         cryptoObj.getRandomValues(randomArray);
         var random = randomArray[0] % 37;
 
-        var seed = web3.sha3(address + random, {encoding: 'hex'});
+        var salt = web3.fromAscii(RandomProvider.providerSalts[providerNum]);
+        var seed = Contracts.random.getSeed(salt, random);
         RandomProvider.sentNumbers[seed] = random;
 
         contract.placeSuggest.estimateGas(
@@ -86,8 +92,12 @@ var RandomProvider = {
             from: address
         };
 
+        var salt = web3.fromAscii(RandomProvider.providerSalts[suggest.providerNum]);
+        var random = RandomProvider.sentNumbers[suggest.seed];
         Contracts.random.updateRequestResult.estimateGas(
-            request.index, RandomProvider.sentNumbers[suggest.seed],
+            request.index,
+            salt,
+            random,
             params,
             function (e, gas) {
                 if (e) {
@@ -97,7 +107,9 @@ var RandomProvider = {
                     params2.gas = gas;
                     Contracts.totalGasSpend += gas;
                     Contracts.random.updateRequestResult(
-                        request.index, RandomProvider.sentNumbers[suggest.seed],
+                        request.index,
+                        salt,
+                        random,
                         params2,
                         function (e, hash) {
                             if (e) {
