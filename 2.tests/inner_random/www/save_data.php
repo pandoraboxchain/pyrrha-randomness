@@ -1,11 +1,11 @@
 <?php
 /**
- * и для анализа нам удобнее csv ага)
+ * и для анализа R => .txt
  */
 $data = @$_REQUEST;
 
-$fp = fopen('results.csv', 'w');
+$fp = fopen('results.txt', 'w');
 foreach ($data as $key => $value) {
-	fwrite($fp, $key . ';' . $value . PHP_EOL);
+	fwrite($fp, $value . PHP_EOL);
 }
 fclose($fp);

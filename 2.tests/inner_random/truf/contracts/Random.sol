@@ -30,7 +30,7 @@ contract Random {
 		blockDelay = 1;
 		blockExpired = 1000;
 		requestsCount = 0;
-		maxResult = 37;
+		maxResult = 100;
 	}
 
 	function() {
