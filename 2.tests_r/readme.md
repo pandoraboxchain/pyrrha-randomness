@@ -10,7 +10,7 @@
 
 ### Shapiro-Wilk normality test > 0.05 Числа случайны
 
-W = 0.99794, p-value = 0.2574
+W = 0.99852, p-value = 0.5672
 
 
 
