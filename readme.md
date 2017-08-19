@@ -1,5 +1,7 @@
 # Генератор случайных чисел
 
+[![Join the chat at https://gitter.im/pandoraboxchain/lottery_algorithm](https://badges.gitter.im/pandoraboxchain/lottery_algorithm.svg)](https://gitter.im/pandoraboxchain/lottery_algorithm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Поставновка задачи
 
 Нахождение наилучшего алгоритма получения "случайного" числа в Solidity
