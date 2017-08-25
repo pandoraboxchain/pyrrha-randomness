@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+		  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+			integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+			crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+			integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+			crossorigin="anonymous"></script>
+	<title>Inner Random Test</title>
+</head>
+<body>
+
+<div class="row" style="padding-top: 120px">
+
+	<div class="col-md-8">
+
+		<div class="container" id="loading_boxes">
+			<div class="row">
+				<h1>Contract is loading....</h1>
+			</div>
+		</div>
+
+		<div class="container" id="loaded_boxes" style="display: none;">
+			<div class="row">
+				<h1>Contract loaded <span id="contract_address"></span></spam></h1>
+			</div>
+			<div class="row">
+				<div class="col-md-12" id="result">
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="col-md-4" id="info_alerts">
+
+	</div>
+</div><hr>
+</div> <!-- /container -->
+
+
+<script src="./libs/web3.js"></script>
+<script src="./app/common.js"></script>
+<script src="./app/init.js"></script>
+</body>
+</html>
